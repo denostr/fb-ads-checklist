@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checklist generator</title>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header text-center">
+                Facebook Ads checklist generator
+            </div>
+            <div class="card-body">
+                <h5 class="card-title text-center">Выберите параметры вашей рекламной кампании Facebook</h5>
+                <br><br>
+                <form class="text-center" id="paramsForm">
+                	<div id="base-params">
+                		<div id="accordion">
+                			<div class="card">
+                			    <div class="card-header" id="headingOne">
+                			      <h5 class="mb-0">
+                			        <a class="btn btn-link" data-toggle="collapse" data-target="#collapseCompany" aria-expanded="false" aria-controls="collapseCompany" style="cursor: pointer;">
+                			          Настройки кампании
+                			        </a>
+                			      </h5>
+                			    </div>
+
+                			    <div id="collapseCompany" class="collapse show" aria-labelledby="headingOne">
+                			      <div class="card-body" id="campaingParams">
+                			        <div class="form-group col-md-4 offset-md-4">
+                			            <label for="typeGoal"> Цель рекламной кампании</label>
+                			            <select id="typeGoal" class="form-control">
+                			                <option value="goal_lead_form">Лид-форма</option>
+                			                <option value="goal_message">Сообщения</option>
+                			                <option value="goal_traffic">Трафик</option>
+                			                <option value="goal_conversion">Конверсия</option>
+                			            </select>
+                			        </div>
+                			      </div>
+                			    </div>
+                			</div>
+
+                			<div class="card">
+                			    <div class="card-header" id="headingTwo">
+                			      <h5 class="mb-0">
+                			        <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseAdset" aria-expanded="false" aria-controls="collapseAdset" style="cursor: pointer;">
+                			          Настройки группы объявлений
+                			        </a>
+                			      </h5>
+                			    </div>
+
+                			    <div id="collapseAdset" class="collapse" aria-labelledby="headingTwo">
+                			      <div class="card-body" id="adsetParams">
+                			        <div class="form-group col-md-4 offset-md-4">
+                			            <label for="budgetType">Тип бюджета</label>
+                			            <select id="budgetType" class="form-control">
+                			            	<option value="budget_type_dayly">Дневной</option>
+                			                <option value="budget_type_all">На весь период</option>
+                			            </select>
+                			        </div>
+
+                			        <div class="form-group col-md-4 offset-md-4">
+                			            <label for="deviceExclude">Уточнение по устройствам</label>
+                			            <select id="deviceExclude" class="form-control">
+                			            	<option value="device_exclude_enabled">Используется</option>
+                			                <option value="device_exclude_disabled">Не используется</option>
+                			            </select>
+                			        </div>
+
+                			        <div class="form-group col-md-4 offset-md-4">
+                			            <label for="auditoryExpansion">Автоматическое расширение аудитории</label>
+                			            <select id="auditoryExpansion" class="form-control">
+                			                <option value="auditory_expansion_disabled">Выключено</option>
+                			                <option value="auditory_expansion_enabled">Включено</option>
+                			            </select>
+                			        </div>
+
+                			        <div class="form-group col-md-4 offset-md-4">
+                			            <label for="splitTest">Сплит-тест</label>
+                			            <select id="splitTest" class="form-control">
+                			                <option value="split_test_disabled">Не используется</option>
+                			                <option value="split_test_enabled">Используется</option>
+                			            </select>
+                			        </div>
+
+                			        <div class="form-group col-md-4 offset-md-4">
+                			            <label for="dateEnd">Дата завершения показа</label>
+                			            <select id="dateEnd" class="form-control">
+                			            	<option value="date_end_disabled">Не используется</option>
+                			            	<option value="date_end_enabled">Используется</option>
+                			            </select>
+                			        </div>
+
+                			        <div class="form-group col-md-4 offset-md-4">
+                			            <label for="osLimit">Ограничение по версии OS</label>
+                			            <select id="osLimit" class="form-control">
+                			            	<option value="os_limit_disabled">Не используется</option>
+                			            	<option value="os_limit_enabled">Используется</option>
+                			            </select>
+                			        </div>
+                			      </div>
+                			    </div>
+                			</div>
+
+                			<div class="card">
+                			    <div class="card-header" id="headingThree">
+                			      <h5 class="mb-0">
+                			        <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseAds" aria-expanded="false" aria-controls="collapseAds" style="cursor: pointer;">
+                			          Настройки объявлений
+                			        </a>
+                			      </h5>
+                			    </div>
+
+                			    <div id="collapseAds" class="collapse" aria-labelledby="headingThree">
+                			      <div class="card-body" id="adParams">
+                			        <div class="form-group col-md-4 offset-md-4">
+                			            <label for="typeContent">Тип контента</label>
+                			            <select id="typeContent" class="form-control">
+                			                <option value="content_type_image">Изображение</option>
+                			                <option value="content_type_video">Видео</option>
+                			                <option value="content_type_catalog">Каталог</option>
+                			            </select>
+                			        </div>
+
+                			        <div class="form-group col-md-4 offset-md-4">
+                			            <label for="dynamicCreatives">Динамические креативы</label>
+                			            <select id="dynamicCreatives" class="form-control">
+                			                <option value="dynamic_creatives_disabled">Выключено</option>
+                			                <option value="dynamic_creatives_enabled">Включено</option>
+                			            </select>
+                			        </div>
+
+                			        <div class="form-group col-md-4 offset-md-4">
+                			            <label for="useLink">Наличие ссылки в объявлении</label>
+                			            <select id="useLink" class="form-control">
+                			            	<option value="use_link_disabled">Не используется</option>
+                			            	<option value="use_link_enabled">Используется</option>
+                			            </select>
+                			        </div>
+                			      </div>
+                			    </div>
+                			</div>
+                		</div>
+	                </div>
+	                <div id="dynamic-params"></div>
+                	<br><br>
+                	<button class="btn btn-success" id="checklistGenerate">Генерация чек-листа</button>
+                </form>
+                <div class="container" id="checklist" style="display:none">
+                	<br><br><br><br>
+	                <button class="btn btn-primary" id="copyChecklist">Копировать</button>
+	                <br><br>
+    	            <div class="form-group">
+    	            	<input type="checkbox" class="form-check-input" id="exampleCheck1">
+    					<label class="form-check-label" for="exampleCheck1">Кампания названа корректно</label>
+    	            </div>
+
+                    <div class="form-group">
+                    	<input type="checkbox" class="form-check-input" id="exampleCheck1">
+        				<label class="form-check-label" for="exampleCheck1">Группы объявлений названы корректно</label>
+                    </div>
+
+                    <div class="form-group">
+                    	<input type="checkbox" class="form-check-input" id="exampleCheck1">
+        				<label class="form-check-label" for="exampleCheck1">Объявления названы корректно</label>
+                    </div>
+
+                    <div class="form-group">
+                    	<input type="checkbox" class="form-check-input" id="exampleCheck1">
+        				<label class="form-check-label" for="exampleCheck1">Текст объявлений указан корректно</label>
+                    </div>
+
+                    <div class="form-group">
+                    	<input type="checkbox" class="form-check-input" id="exampleCheck1">
+        				<label class="form-check-label" for="exampleCheck1">Оптимизация бюджета кампании отключена</label>
+                    </div>
+
+                    <div class="form-group">
+                    	<input type="checkbox" class="form-check-input" id="exampleCheck1">
+        				<label class="form-check-label" for="exampleCheck1">Указана верная бизнес страница</label>
+                    </div>
+
+                    <div class="form-group">
+                    	<input type="checkbox" class="form-check-input" id="exampleCheck1">
+        				<label class="form-check-label" for="exampleCheck1">Проставлен язык целевой аудитории</label>
+                    </div>
+
+                    <div class="form-group">
+                    	<input type="checkbox" class="form-check-input" id="exampleCheck1">
+        				<label class="form-check-label" for="exampleCheck1">Выбрана корректная целевая аудитория</label>
+                    </div>
+
+                    <div class="form-group">
+                    	<input type="checkbox" class="form-check-input" id="exampleCheck1">
+        				<label class="form-check-label" for="exampleCheck1">Указан корректный плейсмент</label>
+                    </div>
+
+                    <div class="form-group">
+                    	<input type="checkbox" class="form-check-input" id="exampleCheck1">
+        				<label class="form-check-label" for="exampleCheck1">Установлен корректный заголовок</label>
+                    </div>
+
+                    <div class="form-group">
+                    	<input type="checkbox" class="form-check-input" id="exampleCheck1">
+        				<label class="form-check-label" for="exampleCheck1">Выбран корректный призыв к действию</label>
+                    </div>
+
+                    <div class="form-group">
+                    	<input type="checkbox" class="form-check-input" id="exampleCheck1">
+        				<label class="form-check-label" for="exampleCheck1">Используется пиксель Facebook</label>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="card-footer text-muted">
+                GitHub link
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" charset="utf-8"></script>
+</body>
+</html>

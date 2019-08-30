@@ -9,25 +9,24 @@ const checkitem_labels = {
     'content_type_catalog': 'Подключен верный каталог',
     'auditory_expansion_disabled': 'Автоматическое расширение аудитории выключено',
     'auditory_expansion_enabled': 'Автоматическое расширение аудитории включено',
-    'split_test_disabled': 'Сплит-тест выключен',
     'split_test_enabled': 'Сплит-тест включен',
-    'dynamic_creatives_disabled': 'Динамические креативы не используются',
-    'dynamic_creatives_enabled': 'Динамические креативы включены',
+    'dynamic_creatives_enabled': 'Динамические креативы настроены корректно',
     'device_exclude_enabled': 'Указано исключение по устройствам',
     'device_exclude_disabled': 'Исключение по устройствам выключено',
     'budget_type_dayly': 'Установлен дневной бюджет',
     'budget_type_all': 'Установлен бюджет на весь срок',
     'date_end_disabled': 'Дата окончания кампании не установлена',
     'date_end_enabled': 'Установлена корректная дата завершения показа',
-    'os_limit_disabled': 'Установлен лимит по версии OS',
-    'os_limit_enabled': 'Не установлен лимит по версии OS',
+    'os_limit_enabled': 'Установлен лимит по версии OS',
     'use_link_enabled': 'Указана корректная ссылка',
     'use_short_link_enabled': 'Указана корректная короткая ссылка',
+    'use_utm_enabled': 'UTM метки проставлены корректно',
 }
 
 const params_labels = {
     'message_type': 'Тип сообщения',
-    'use_short_link': 'Используется короткая ссылка'
+    'use_short_link': 'Используется короткая ссылка',
+    'use_utm_link': 'Используются UTM метки'
 }
 
 const params = {
@@ -59,7 +58,15 @@ const params = {
                     'use_short_link_enabled': 'Используется',
                 },
                 block: '#adParams'
-            }
+            }//,
+            // 'use_utm_link': {
+            //     type: 'select',
+            //     options: {
+            //         'use_utm_disabled': 'Не используется',
+            //         'use_utm_enabled': 'Используется',
+            //     },
+            //     block: '#adParams'
+            // }
         }
     }
 }

@@ -1,6 +1,6 @@
 const checkitem_labels = {
     'form_selected': 'Выбрана правильная лид-форма',
-    'form_work': 'Ли-форма корректно срабатывает',
+    'form_work': 'Лид-форма корректно срабатывает',
     'content_type_image': 'Изображения объявлений проставлены корректно',
     'content_type_video': 'Видео объявлений проставлены корректно',
     'default_reply': 'Установлено корректное приветственное сообщение',
@@ -58,15 +58,15 @@ const params = {
                     'use_short_link_enabled': 'Используется',
                 },
                 block: '#adParams'
-            }//,
-            // 'use_utm_link': {
-            //     type: 'select',
-            //     options: {
-            //         'use_utm_disabled': 'Не используется',
-            //         'use_utm_enabled': 'Используется',
-            //     },
-            //     block: '#adParams'
-            // }
+            },
+            'use_utm_link': {
+                type: 'select',
+                options: {
+                    'use_utm_disabled': 'Не используется',
+                    'use_utm_enabled': 'Используется',
+                },
+                block: '#adParams'
+            }
         }
     }
 }
@@ -96,7 +96,6 @@ function rebuildParams(element) {
         && typeof params[changed_param].params !== 'undefined') {
 
         Object.entries(params[changed_param].params).forEach(([key, value]) => {
-            // addParam(key, value.type, value.options);
             addParam(key, value);
         })
     }
@@ -120,13 +119,13 @@ function rebuildChecklist() {
     })
 
     goals.forEach((goal) => {
-        if (typeof params[goal] !== 'undefined') {
-            if (typeof params[goal]['check_item'] !== 'undefined') {
-                params[goal]['check_item'].forEach((check) => {
-                    addCheckItem(check);
-                })
-            }
-        } else if (typeof checkitem_labels[goal] !== 'undefined') {
+        if (typeof params[goal] !== 'undefined' && typeof params[goal]['check_item'] !== 'undefined') {
+            params[goal]['check_item'].forEach((check) => {
+                addCheckItem(check);
+            })
+        }
+
+        if (typeof checkitem_labels[goal] !== 'undefined') {
             addCheckItem(goal);
         }
     })

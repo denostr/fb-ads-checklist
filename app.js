@@ -11,7 +11,7 @@ const checkitem_labels = {
     'auditory_expansion_enabled': 'Автоматическое расширение аудитории включено',
     'split_test_enabled': 'Сплит-тест включен',
     'dynamic_creatives_enabled': 'Динамические креативы настроены корректно',
-    'device_exclude_enabled': 'Указано исключение по устройствам',
+    'device_exclude_enabled': 'Указано уточнение по устройствам',
     'device_exclude_disabled': 'Исключение по устройствам выключено',
     'budget_type_dayly': 'Установлен дневной бюджет',
     'budget_type_all': 'Установлен бюджет на весь срок',
@@ -21,6 +21,8 @@ const checkitem_labels = {
     'use_link_enabled': 'Указана корректная ссылка',
     'use_short_link_enabled': 'Указана корректная короткая ссылка',
     'use_utm_enabled': 'UTM метки проставлены корректно',
+    'goal_conversion': 'Конверсия срабатывает корректно',
+    'content_type_text': 'Текст на изображении прописан корректно'
 }
 
 const params_labels = {
@@ -34,6 +36,11 @@ const params = {
         'check_item': [
             'form_selected',
             'form_work'
+        ]
+    },
+    'content_type_image': {
+        'check_item': [
+            'content_type_text'
         ]
     },
     'goal_message': {
